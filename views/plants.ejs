@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body class="plants--body tenor-sans-regular">
+    <nav>
+        <div class= "nav--iconCont">
+            <img class="nav--icon" src="/images/flower.jpg" alt="wildflower" width="40px">
+            <span>WF</span>
+        </div>
+       
+        <ul>
+           <li><a href="/">Home</a></li>
+           <li><a href="/states">States</a></li>
+           <li><a href="/about">About</a></li> 
+        </ul>
+    </nav>
+    <header>
+        <h2><%= location %>'s Native Wildflowers</h2>
+    </header>
+    <main>
+        <ul class="plants"> 
+                
+                <% for (let i = 0 ; i < Object.keys(items).length ; i++) { %>
+                    <li class="item">
+                    <h3><%= items[i].name %> </h3>
+                    <h4>Scientific Name:</h4>
+                    <span><%= items[i].sciName %></span> 
+                    <h4>Season :</h4>
+                    <span><%= items[i].season %><span>
+                    </li>
+            <% } %>
+        
+        </ul>
+        <button class="plants--return" onclick="window.location.href='/'">go back</button>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+</html>
