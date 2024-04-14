@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="index--body tenor-sans-regular">
+    
+    <nav>
+        <div class= "nav--iconCont">
+            <img class="nav--icon" src="/images/flower.jpg" alt="wildflower" width="40px">
+            <span>WF</span>
+        </div>
+       
+        <ul>
+            <li><a href="/">Home</a></li>
+           <li><a href="/states">States</a></li>
+           <li><a href="/about">About</a></li> 
+        </ul>
+    </nav>
+     <header>
+        <h1>Native WildFlowers</h1>
+        <p>Get the native wildflowers for the general southwest</p>
+    </header>
+
+    <main>
+         
+        <h3>Look up the wildflowers:</h3>
+        <form action="/getPlants" class="searchInput" >
+            <input type="text" placeholder="Type State Name" name="stateName">
+            <input type="submit" value="find" class="searchButton">
+        </form>
+        <% if (typeof message !== 'undefined' && message.length > 0) { %>
+            <span class="alert-danger hide alert-msg"><%= message %></span>
+          <% } %>
+       
+        <p>Please spell out the state name</p>
+
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
