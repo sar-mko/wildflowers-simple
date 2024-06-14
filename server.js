@@ -26,10 +26,11 @@ app.get('/states' , async (req,res) => {
 
 
 app.get('/getPlants' , async (req,res) => {
+    console.log(req)
     const capitalize = word => word[0].toUpperCase() + word.slice(1).toLowerCase()
     const state = req.query.stateName !== '' ? capitalize(req.query.stateName) : req.query.stateName
     try {
-        const response = await fetch("https://tough-housecoat-frog.cyclic.app/api/" + req.query.stateName)
+        const response = await fetch("https://wildflowers-api.vercel.app/api/" + req.query.stateName)
         if(!response) {
             res.send('it failed')
             throw new Error(`uh-oh: ${response.status}`)
